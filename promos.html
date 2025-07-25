@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starbucks | Group 9 - Promos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+    .promo-section {
+      padding: 4rem 1rem;
+      background-color: var(--primary-color);
+    }
+
+    .promo-section .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--white-color);
+    }
+
+    .promo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .promo-card {
+      background-color: var(--light-pink-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .promo-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .promo-card .promo-content {
+      padding: 1rem 1.2rem;
+    }
+
+    .promo-content h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .promo-content p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <div id="promotop"></div>
+
+  
+  <header>
+    <nav class="navbar section-content">
+      <a href="index.html" class="nav-logo">
+        <h2 class="logo-text">Starbucks</h2>
+      </a>
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="menu.html#menutop" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="contact.html#contacttop" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="promos.html#promotop" class="nav-link">Promos</a></li>
+      </ul>
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  
+  <main>
+    <section class="promo-section">
+      <h2 class="section-title">Exclusive Promos</h2>
+      <div class="promo-grid">
+        <div class="promo-card">
+          <img src="images/buy-one.png" alt="Promo 1">
+          <div class="promo-content">
+            <h3>Buy 1 Get 1 Free</h3>
+            <p>Valid until end of the month!</p>
+          </div>
+        </div>
+        <div class="promo-card">
+          <img src="images/free-cookie.png" alt="Promo 2">
+          <div class="promo-content">
+            <h3>Free Cookie with Any Latte</h3>
+            <p>Free cookie when you order any latte.</p>
+          </div>
+        </div>
+        <div class="promo-card">
+          <img src="images/student-discount.png" alt="Promo 3">
+          <div class="promo-content">
+            <h3>Student Discount</h3>
+            <p>Get 10% off your entire order every Monday to Friday!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

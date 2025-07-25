@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks | Group 9 - Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Schoolbell', cursive;
+    background-color: var(--light-pink-color);
+    color: var(--dark-color);
+    overflow-x: hidden;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background: var(--primary-color);
+  }
+
+  
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transition: transform 0.3s ease;
+}
+
+
+.nav-link {
+  position: relative;
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: var(--font-size-m);
+  padding: 8px 14px;
+  border-radius: var(--border-radius-s);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+
+.review {
+  border-left: 5px solid var(--primary-color);
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f9f8f6;
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+#menu-open-button:hover,
+#menu-close-button:hover {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .nav-logo h2 {
+    font-size: var(--font-size-xxl);
+    color: var(--white-color);
+    margin: 0;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-link {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: var(--font-size-m);
+    padding: 8px 14px;
+    border-radius: var(--border-radius-s);
+    transition: background 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+
+  #menu-open-button,
+  #menu-close-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white-color);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      top: 70px;
+      right: 0;
+      background-color: var(--primary-color);
+      flex-direction: column;
+      width: 250px;
+      padding: 20px;
+      display: none;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+
+    #menu-open-button {
+      display: block;
+    }
+
+    #menu-close-button {
+      align-self: flex-end;
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 140px auto 0;
+    padding: 40px 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius-s);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  article.review {
+    border-left: 5px solid var(--primary-color);
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f8f6;
+    border-radius: var(--border-radius-s);
+  }
+
+  .review .name {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-n);
+    color: var(--dark-color);
+  }
+
+  .review .stars {
+    color: #ffc107;
+    font-size: var(--font-size-n);
+  }
+
+  .review blockquote {
+    margin-top: 10px;
+    padding-left: 15px;
+    border-left: 3px solid var(--secondary-color);
+    font-style: italic;
+    font-family: 'Schoolbell', cursive;
+    color: var(--medium-gray-color);
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    margin-top: 50px;
+  }
+</style>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <h2 class="logo-text">Starbucks</h2>
+            </a>
+
+        <ul class="nav-menu" id="nav-menu">
+            <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="promos.html#promotop" class="nav-link">Promos</a></li>
+        </ul>
+
+                <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+  </header>
+
+  <div class="container">
+      <h2>Customer Reviews</h2>
+
+          <article class="review">
+              <p class="name">Carlotta</p>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <blockquote>I really love the mocha latte here! The place feels warm and cozy, and the baristas are always friendly and welcoming.</blockquote>
+          </article>
+
+          <article class="review">
+              <p class="name">Brant</p>
+              <p class="stars">⭐⭐⭐⭐</p>
+              <blockquote>This is a great spot to chill or get some work done. The espresso is bold and full of flavor.</blockquote>
+          </article>
+
+          <article class="review">
+              <p class="name">Jinhsi</p>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <blockquote>Best cappuccino in town! I come here every morning before work. Highly recommend the cinnamon rolls too!</blockquote>
+          </article>
+
+          <article class="review">
+              <p class="name">Phoebe</p>
+              <p class="stars">⭐⭐⭐</p>
+              <blockquote>Nice coffee and environment, though sometimes it's a bit crowded. Still a solid spot.</blockquote>
+          </article>
+
+          <article class="review">
+              <p class="name">Camellya</p>
+              <p class="stars">⭐⭐⭐⭐⭐</p>
+              <blockquote>Their cold brew is a game changer! Perfectly brewed and not too bitter.</blockquote>
+          </article>
+    </div>
+
+  <footer>
+    &copy; 2025 Starbucks. All rights reserved.
+  </footer>
+
+  <script>
+    const menuOpenBtn = document.getElementById('menu-open-button');
+    const menuCloseBtn = document.getElementById('menu-close-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuOpenBtn.addEventListener('click', () => {
+      navMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    menuCloseBtn.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks | Group 9 - Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="galltop"></div>
+    <header>
+        <nav class="navbar section-content">
+            <a href="index.html" class="nav-logo">
+                <h2 class="logo-text">Starbucks</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-list">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-list">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-list">
+                    <a href="menu.html" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-list">
+                    <a href="reviews.html" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-list">
+                    <a href="gallery.html" class="nav-link">Gallery</a>
+                </li>  
+                <li class="nav-list">
+                    <a href="contact.html#contacttop" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="promos.html#promotop" class="nav-link">Promos</a>
+                </li>            
+            </ul>
+
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <div class="slider">
+        <div class="list">
+            <!-- ITEM 1 -->
+            <div class="item slider-item" data-video="americano-holder.mp4">
+                <img src="images/americano.png" alt="Iced Americano">
+                <p class="list-name">Iced Americano</p>
+                <video muted loop></video>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="item slider-item" data-video="cafe-latte-holder.mp4">
+                <img src="images/cafe-latte.png" alt="Cafe Latte">
+                <p class="list-name">Cafe Latte</p>
+                <video muted loop></video>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="item slider-item" data-video="iced-latte-holder.mp4">
+                <img src="images/iced-latte.png" alt="Iced Latte">
+                <p class="list-name">Iced Latte</p>
+                <video muted loop></video>
+            </div>
+        
+            <!-- ITEM 4 -->
+            <div class="item slider-item" data-video="macchiato-holder.mp4">
+                <img src="images/macchiato.png" alt="Macchiato">
+                <p class="list-name">Macchiato</p>
+                <video muted loop></video>
+            </div> 
+
+            <!-- ITEM 5 -->
+            <div class="item slider-item" data-video="matcha-latte-holder.mp4">
+                <img src="images/matcha-latte1.PNG" alt="Matcha Latte">
+                <p class="list-name">Matcha Latte</p>
+                <video muted loop></video>
+            </div>
+
+            <!-- ITEM 6 -->
+            <div class="item slider-item" data-video="mocha-frappuccino-holder.mp4">
+                <img src="images/mocha-frappuccino1.PNG" alt="Mocha Frappuccino">
+                <p class="list-name">Mocha Frappuccino</p>
+                <video muted loop></video>
+            </div>
+
+            <!-- ITEM 7 -->
+            <div class="item slider-item" data-video="strawberry-acai-holder.mp4">
+                <img src="images/strawberry-acai.png" alt="Strawberry Acai">
+                <p class="list-name">Strawberry Acai</p>
+                <video muted loop></video>
+            </div>
+
+            <!-- ITEM 8 -->
+            <div class="item slider-item" data-video="croissant-holder.mp4">
+                <img src="images/croissant.png" alt="Croissant">
+                <p class="list-name">Croissant</p>
+                <video muted loop></video>
+            </div> 
+
+            <!-- ITEM 9 -->
+            <div class="item slider-item" data-video="glazed-donut-holder.mp4">
+                <img src="images/glazed-donut.png" alt="Glazed Donut">
+                <p class="list-name">Glazed Donut</p>
+                <video muted loop></video>
+            </div> 
+        </div>
+
+        <div class="rectangle"></div>
+
+        <div class="arrow">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
